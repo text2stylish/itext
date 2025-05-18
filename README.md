@@ -14,7 +14,11 @@
       padding: 20px;
     }
 
-
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     h1 {
       font-family: 'Rubik Wet Paint', cursive;
@@ -25,6 +29,16 @@
 
     .input-section {
       margin: 30px 0;
+    }
+
+    textarea {
+      width: 80%;
+      height: 100px;
+      padding: 15px;
+      border-radius: 15px;
+      border: 3px solid #ff6b6b;
+      background: rgba(255,255,255,0.9);
+      font-size: 1.2em;
     }
 
     .style-selector {
@@ -113,11 +127,10 @@
 <!-- Google Font link -->
 <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     
-     <div class="credit">
-   Created with ❤️ by <ahref= "target="_blank" style="color: #ffd93d;">Zyraon</a>
-</div>
-
-
+    <div class="credit">
+      Created with ❤️ by <ahref= "target="_blank" style="color: #ffd93d;">Zyraon</a>
+    </div>
+  </div>
       
   <script>
 
@@ -211,4 +224,4 @@
     updateText(); // initial
   </script>
 </body>
-        </html>
+</html>
