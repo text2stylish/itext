@@ -125,8 +125,9 @@
     </div>
 
     <div class="credit">
-      Created with ❤️ by <span style="color: #ffd93d;">Zyraon</span>
-    </div>
+  Created with ❤️ by <a href="https://instagram.com/zyraon" target="_blank" class="no-underline">Zyraon</a>
+</div>
+
   </div>
 
   <script>
