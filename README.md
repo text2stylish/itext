@@ -29,6 +29,21 @@ textarea {
   padding: 10px;
   font-size: 1em;
 }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .styled-text {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  select, .copy-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
 
 
     h1 {
