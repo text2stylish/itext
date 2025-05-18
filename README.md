@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&family=Rubik+Glitch&family=Rubik+Wet+Paint&family=Secular+One&family=Pattaya&display=swap" rel="stylesheet"/>
   <style>
     body {
-      background: linear-gradient(45deg, #2b1055, #7597de);
+      background: linear-gradient(45deg, #FFFFFF, #7597de);
       min-height: 100vh;
       color: white;
       font-family: 'Arial', sans-serif;
@@ -125,7 +125,7 @@
     </div>
 
     <div class="credit">
-  Created with ❤️ by <a href="https://instagram.com/zyraon" target="_blank" class="no-underline">Zyraon</a>
+  Created with ❤️ by <a href= target="_blank" class="no-underline">Zyraon</a>
 </div>
 
   </div>
