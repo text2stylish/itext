@@ -29,22 +29,6 @@ textarea {
   padding: 10px;
   font-size: 1em;
 }
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2em;
-  }
-
-  .styled-text {
-    font-size: 1.2em;
-    padding: 10px;
-  }
-
-  select, .copy-btn {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-
 
     h1 {
       font-family: 'Rubik Wet Paint', cursive;
@@ -144,7 +128,7 @@ textarea {
 <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     
      <div class="credit">
-  Created with ❤️ by <ahref= "target=" _blank" style="colour : #ffd93d;">Zyraon</a>
+   Created with ❤️ by <ahref= "target="_blank" style="color: #ffd93d;">Zyraon</a>
 </div>
 
 
