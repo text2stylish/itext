@@ -144,10 +144,10 @@ textarea {
 <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     
      <div class="credit">
-  Created with ❤️ by <span style="color: #ffd93d;">Zyraon</span>
+  Created with ❤️ by <span class="author-name">Zyraon</span>
 </div>
 
-  </div>
+
       
   <script>
 
