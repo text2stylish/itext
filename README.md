@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>iText - AI Stylish Text Generator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&family=Rubik+Glitch&family=Rubik+Wet+Paint&family=Secular+One&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&family=Rubik+Glitch&family=Rubik+Wet+Paint&family=Secular+One&family=Pattaya&display=swap" rel="stylesheet"/>
   <style>
     body {
       background: linear-gradient(45deg, #2b1055, #7597de);
@@ -12,6 +12,7 @@
       color: white;
       font-family: 'Arial', sans-serif;
       padding: 20px;
+      overflow-x: hidden;
     }
 
     .container {
@@ -32,7 +33,8 @@
     }
 
     textarea {
-      width: 80%;
+      width: 100%;
+      max-width: 100%;
       height: 100px;
       padding: 15px;
       border-radius: 15px;
@@ -46,6 +48,7 @@
     }
 
     select {
+      width: 100%;
       padding: 10px 20px;
       border-radius: 25px;
       background: #ff6b6b;
@@ -71,6 +74,7 @@
     }
 
     .copy-btn {
+      width: 100%;
       background: #4CAF50;
       color: white;
       border: none;
@@ -92,11 +96,32 @@
       font-size: 1.4em;
       color: #ffd93d;
     }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      textarea {
+        height: 120px;
+        font-size: 1em;
+      }
+
+      .styled-text {
+        font-size: 1.2em;
+        padding: 10px;
+      }
+
+      .output-section {
+        padding: 15px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>iText ✨</h1>
+
     <div class="input-section">
       <textarea id="inputText" placeholder="Enter your text here..."></textarea>
       <div class="style-selector">
@@ -107,32 +132,33 @@
           <option value="cyber">Cyber Style</option>
           <option value="graffiti">Graffiti Style</option>
           <option value="modern">Modern Style</option>
-          
           <option value="gradient-text">Gradient Style</option>
         </select>
       </div>
-      <button class="copy-btn" onclick="copyText()">Copy Text 📋</button>
+      <button class="copy-btn" id="copyBtn" onclick="copyText()">Copy Text 📋</button>
     </div>
 
     <div class="output-section">
       <div id="output" class="styled-text"></div>
     </div>
-<div style="padding: 10px;">
-  <h2 style="color: yellow; font-family: 'Pattaya', cursive;">About iText</h2>
-  <p style="color: yellow; font-family: 'Pattaya', cursive;">
-    "iText is a tool that makes your text stylish and eye-catching, perfect for Instagram captions, bios, YouTube, Facebook, Twitter, and more. Boring text? Not anymore! With 7 unique text styles, iText gives your words a fresh and funky new look."
-  </p>
-</div>
 
-<!-- Google Font link -->
-<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
-    
+    <div style="padding: 10px;">
+      <h2 style="color: yellow; font-family: 'Pattaya', cursive;">About iText</h2>
+      <p style="color: yellow; font-family: 'Pattaya', cursive;">
+        "iText is a tool that makes your text stylish and eye-catching, perfect for Instagram captions, bios, YouTube, Facebook, Twitter, and more. Boring text? Not anymore! With 7 unique text styles, iText gives your words a fresh and funky new look."
+      </p>
+    </div>
+
     <div class="credit">
-      Created with ❤️ by <ahref= "target="_blank" style="color: #ffd93d;">Zyraon</a>
+      Created with ❤️ by <a href="https://instagram.com/zyraon.art" target="_blank" style="color: #ffd93d;">Zyraon</a>
     </div>
   </div>
-      
+
   <script>
+    const inputText = document.getElementById("inputText");
+    const styleSelect = document.getElementById("styleSelect");
+    const output = document.getElementById("output");
+    const copyBtn = document.getElementById("copyBtn");
 
     const styles = {
       'handwriting': text => toScript(text),
@@ -171,7 +197,6 @@
 
       navigator.clipboard.writeText(text)
         .then(() => {
-          if (copySound) copySound.play();
           showCopyMessage("Copied!", "#2ecc71");
         })
         .catch(err => {
