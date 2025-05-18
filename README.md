@@ -14,11 +14,22 @@
       padding: 20px;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 120px;
+  padding: 10px;
+  font-size: 1em;
+}
+
 
     h1 {
       font-family: 'Rubik Wet Paint', cursive;
@@ -29,16 +40,6 @@
 
     .input-section {
       margin: 30px 0;
-    }
-
-    textarea {
-      width: 80%;
-      height: 100px;
-      padding: 15px;
-      border-radius: 15px;
-      border: 3px solid #ff6b6b;
-      background: rgba(255,255,255,0.9);
-      font-size: 1.2em;
     }
 
     .style-selector {
