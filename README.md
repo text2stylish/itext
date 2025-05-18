@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>iText - AI Stylish Text Generator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&family=Rubik+Glitch&family=Rubik+Wet+Paint&family=Secular+One&family=Pattaya&display=swap" rel="stylesheet"/>
+  <title>iText – Stylish Text Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background: linear-gradient(45deg, #2b1055, #7597de);
       min-height: 100vh;
@@ -19,6 +25,7 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
+      padding: 0 15px;
     }
 
     h1 {
@@ -26,21 +33,22 @@
       color: #ff6b6b;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       font-size: 2.5em;
+      margin-bottom: 20px;
     }
 
     .input-section {
-      margin: 30px 0;
+      margin: 20px 0;
     }
 
     textarea {
       width: 100%;
-      max-width: 100%;
       height: 100px;
       padding: 15px;
       border-radius: 15px;
       border: 3px solid #ff6b6b;
-      background: rgba(255,255,255,0.9);
-      font-size: 1.2em;
+      background: rgba(255,255,255,0.95);
+      font-size: 1.1em;
+      resize: vertical;
     }
 
     .style-selector {
@@ -49,17 +57,18 @@
 
     select {
       width: 100%;
-      padding: 10px 20px;
+      padding: 12px;
       border-radius: 25px;
       background: #ff6b6b;
       color: white;
       border: none;
       font-weight: bold;
+      font-size: 1em;
       cursor: pointer;
     }
 
     .output-section {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.15);
       padding: 20px;
       border-radius: 20px;
       margin: 20px 0;
@@ -67,9 +76,8 @@
     }
 
     .styled-text {
-      font-size: 1.5em;
+      font-size: 1.4em;
       margin: 20px 0;
-      padding: 15px;
       word-wrap: break-word;
     }
 
@@ -78,12 +86,11 @@
       background: #4CAF50;
       color: white;
       border: none;
-      padding: 12px 25px;
+      padding: 12px;
       border-radius: 25px;
       cursor: pointer;
-      font-size: 1.1em;
-      transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
-      margin-top: 15px;
+      font-size: 1em;
+      transition: transform 0.3s;
     }
 
     .copy-btn:hover {
@@ -93,106 +100,92 @@
     .credit {
       margin-top: 30px;
       font-family: 'Dancing Script', cursive;
-      font-size: 1.4em;
+      font-size: 1.3em;
       color: #ffd93d;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       h1 {
         font-size: 2em;
       }
 
-      textarea {
-        height: 120px;
-        font-size: 1em;
-      }
-
       .styled-text {
         font-size: 1.2em;
-        padding: 10px;
       }
 
-      .output-section {
-        padding: 15px;
+      .copy-btn, select, textarea {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>iText ✨</h1>
-
+    <h1>iText</h1>
     <div class="input-section">
       <textarea id="inputText" placeholder="Enter your text here..."></textarea>
-      <div class="style-selector">
-        <select id="styleSelect">
-          <option value="handwriting">Handwriting Style</option>
-          <option value="bold-style">Bold Style</option>
-          <option value="aesthetic">Aesthetic Style</option>
-          <option value="cyber">Cyber Style</option>
-          <option value="graffiti">Graffiti Style</option>
-          <option value="modern">Modern Style</option>
-          <option value="gradient-text">Gradient Style</option>
-        </select>
-      </div>
-      <button class="copy-btn" id="copyBtn" onclick="copyText()">Copy Text 📋</button>
     </div>
-
+    <div class="style-selector">
+      <select id="styleSelect">
+        <option value="bold">Bold</option>
+        <option value="italic">Italic</option>
+        <option value="underline">Underline</option>
+        <option value="smallcaps">Small Caps</option>
+        <option value="bubble">Bubble</option>
+        <option value="square">Square</option>
+        <!-- Add more styles as needed -->
+      </select>
+    </div>
     <div class="output-section">
-      <div id="output" class="styled-text"></div>
+      <div class="styled-text" id="styledText">Your styled text will appear here.</div>
+      <button class="copy-btn" onclick="copyText()">Copy Text</button>
     </div>
-
-    <div style="padding: 10px;">
-      <h2 style="color: yellow; font-family: 'Pattaya', cursive;">About iText</h2>
-      <p style="color: yellow; font-family: 'Pattaya', cursive;">
-        "iText is a tool that makes your text stylish and eye-catching, perfect for Instagram captions, bios, YouTube, Facebook, Twitter, and more. Boring text? Not anymore! With 7 unique text styles, iText gives your words a fresh and funky new look."
-      </p>
-    </div>
-
-    <div class="credit">
-      Created with ❤️ by <a href="https://instagram.com/zyraon.art" target="_blank" style="color: #ffd93d;">Zyraon</a>
-    </div>
+    <div class="credit">Made with love by <a href="https://instagram.com/zyraon.art/" target="_blank" style="color: #fff600;">Zyraon</a></div>
   </div>
 
   <script>
-    const inputText = document.getElementById("inputText");
-    const styleSelect = document.getElementById("styleSelect");
-    const output = document.getElementById("output");
-    const copyBtn = document.getElementById("copyBtn");
+    const input = document.getElementById('inputText');
+    const output = document.getElementById('styledText');
+    const styleSelect = document.getElementById('styleSelect');
 
-    const styles = {
-      'handwriting': text => toScript(text),
-      'roman': text => text.split('').map(toItalic).join(''),
-      'bold-style': text => text.replace(/[a-z]/gi, c =>
-        String.fromCodePoint(
-          c >= 'A' && c <= 'Z' ? c.charCodeAt(0) + 119743 :
-          c >= 'a' && c <= 'z' ? c.charCodeAt(0) + 119737 :
-          c.charCodeAt(0)
-        )
-      ),
-      'aesthetic': text => text.split('').join(' '),
-      'cyber': text => toGlitch(text),
-      'graffiti': text => toBubble(text),
-      'modern': text => text.toUpperCase().split('').join(' '),
-      'shadow': text => text + ' ' + text,
-      'gradient-text': text => text.split('').map((c, i) => i % 2 === 0 ? c.toUpperCase() : c.toLowerCase()).join('')
-    };
-
-    function updateText() {
-      const text = inputText.value;
-      const style = styleSelect.value;
-      const styled = styles[style] ? styles[style](text) : text;
-      output.className = 'styled-text';
-      output.textContent = styled;
+    function stylize(text, style) {
+      switch (style) {
+        case 'bold': return text.split('').map(c => c + '\u0332').join('');
+        case 'italic': return '*' + text + '*';
+        case 'underline': return text.split('').map(c => c + '\u0332').join('');
+        case 'smallcaps': return text.toLowerCase().replace(/[a-z]/g, c => String.fromCharCode(c.charCodeAt(0) + 9327));
+        case 'bubble': return text.replace(/[a-z]/gi, c => {
+          const base = c.toUpperCase() === c ? 0x1F170 : 0x1F160;
+          return String.fromCodePoint(base + c.toUpperCase().charCodeAt(0) - 65);
+        });
+        case 'square': return text.split('').map(c => c + '\u25A1').join('');
+        default: return text;
+      }
     }
 
-    function copyText() {
-      updateText();
-      const text = output.textContent.trim();
+    input.addEventListener('input', () => {
+      const text = input.value;
+      const style = styleSelect.value;
+      output.textContent = stylize(text, style);
+    });
 
-      if (!text) {
-        showCopyMessage("Please enter text!", "#e74c3c");
-        return;
+    styleSelect.addEventListener('change', () => {
+      input.dispatchEvent(new Event('input'));
+    });
+
+    function copyText() {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = output.textContent;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      alert('Copied to clipboard!');
+    }
+  </script>
+</body>
+</html>
+return;
       }
 
       navigator.clipboard.writeText(text)
