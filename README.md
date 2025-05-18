@@ -144,7 +144,8 @@ textarea {
 <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     
     <div class="credit">
-      Created with ❤️ by <ahref= "target="_blank" style="color: #ffd93d;">Zyraon</a>
+      Created with ❤️ by <a href="#" target="_blank" style="color: #ffd93d;">Zyraon</a>
+      
     </div>
   </div>
       
