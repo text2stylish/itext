@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Art Generator</title>
+</head>
+<body>
+  <h1>🎨 AI Art Generator</h1>
+  <input id="prompt" placeholder="Enter prompt" />
+  <button onclick="generate()">Generate</button>
+  <div id="output"></div>
+
+  <script>
+    async function generate() {
+      const prompt = document.getElementById("prompt").value;
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
+      });
+
+      const data = await res.json();
+      if (data?.output?.[0]) {
+        document.getElementById("output").innerHTML =
+          `<img src="${data.output[0]}" width="512" />`;
+      } else {
+        document.getElementById("output").innerText = "Error!";
+      }
+    }
+  </script>
+</body>
+</html>
